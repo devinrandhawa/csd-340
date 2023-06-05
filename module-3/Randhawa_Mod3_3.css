@@ -1,0 +1,57 @@
+h1 {
+  text-align: center;
+}
+
+div {
+  width: 45%;
+  float: left;
+}
+
+div:last-child {
+  width: 100%;
+  margin-top: 60px;
+}
+
+h3 {
+  font-weight: 500;
+}
+
+ul, ol {
+  font-weight: 300;
+}
+
+ol {
+  border: 1px solid red;
+  border-radius: 15px;
+  padding: 10px;
+  list-style-position: inside;
+  list-style-type: upper-roman
+  text-align: left
+}
+
+ol {
+  list-style-position: inside;
+  list-style-type: decimal;
+  text-align: left;
+}
+ul {
+  list-style-position: inside;
+  list-style-type: upper-roman;
+  text-align: left;
+}
+ul {
+  border: 1px dashed red;
+  border-radius: 15px;
+  padding: 10px;
+  list-style-type: upper-roman;
+  text-align: left
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+div:last-child {
+  float: right;
+  margin-bottom: 20px;
+}
