@@ -1,0 +1,45 @@
+#container {
+  text-align: center;
+}
+
+h1 {
+  color: rgba(255, 0, 0, 1);
+  text-align: center;
+}
+
+h3 {
+  color: rgba(0, 255, 0, 1);
+  text-align: center;
+}
+
+figure {
+  text-align: center;
+}
+
+figcaption {
+  font-style: italic;
+  font-size: 0.75em;
+  color: rgba(0, 0, 255, 1);
+}
+
+#image-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0px;
+  margin-top: 10%
+  border: 1px solid red;
+  padding: 0px;
+ 
+}
+
+.grid-item {
+  text-align: center;
+  border: 1px solid red;
+  padding: 10px;
+}
+
+.grid-item img {
+  width: 50%;
+  height: auto;
+}
+
