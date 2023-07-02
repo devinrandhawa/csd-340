@@ -12,7 +12,7 @@ h1 {
 #navbar {
 	overflow: hidden;
 	background-color: DarkRed;
-	border-bottom: solid 15px #555;
+	border-bottom: DarkRed;
 }
 
 #navbar a {
@@ -25,8 +25,8 @@ h1 {
 }
 
 #navbar a:hover {
-	background-color: #555;
-	color: #fff;
+	background-color: white;
+	color: white;
 }
 
 #container {
@@ -55,6 +55,7 @@ h1 {
 
 .card-content {
 	padding: 2px 16px;
+        font-color: white;
 }
 
 footer {
