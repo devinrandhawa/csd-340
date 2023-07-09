@@ -20,16 +20,28 @@
   <h2>Assignment 10.3: JavaScript - Part 2</h2>
   
  <div>
-    <img src="https://github.com/devinrandhawa/csd-340/blob/main/moon_01.jpg?raw=true" class="Box-sc-g0xbh4-0 kzRgrI" onmouseover="changeImage("image1", "https://github.com/devinrandhawa/csd-340/blob/main/moon_02.jpg?raw=true" class="Box-sc-g0xbh4-0 kzRgrI")" onmouseout="changeImage("image1", "https://github.com/devinrandhawa/csd-340/blob/main/moon_01.jpg?raw=true" class="Box-sc-g0xbh4-0 kzRgrI")" onclick="handleImageClick('image1')">
-    <p>Click on the Picture to change the Image.</p>
+    <img src="" class="image" id="image1" onclick="handleImageClick('image1')" />
+    <p>Click the Image to change the Picture.</p>
   </div>
   
   <div>
-    <img src="https://github.com/devinrandhawa/csd-340/blob/main/cave_01.jpg?raw=true" class="Box-sc-g0xbh4-0 kzRgrI" onmouseover="changeImage("image2", "https://github.com/devinrandhawa/csd-340/blob/main/cave_02.jpg?raw=true" class="Box-sc-g0xbh4-0 kzRgrI")" onmouseout="changeImage("image2", "https://github.com/devinrandhawa/csd-340/blob/main/cave_01.jpg?raw=true" class="Box-sc-g0xbh4-0 kzRgrI")" onclick="handleImageClick('image2')">
-    <p>Click on the Picture to change the Image.</p>
+    <img src="" class="image" id="image2" onclick="handleImageClick('image2')" />
+    <p>Click the Image to change the Picture.</p>
   </div>
   
-   <script>
+  <script>
+    var isLocal = window.location.protocol === 'file:';
+    var image1 = document.getElementById('image1');
+    var image2 = document.getElementById('image2');
+
+    if (isLocal) {
+      image1.src = 'C:\\csd\\csd-340\\module-10\\images\\moon_01.jpg';
+      image2.src = 'C:\\csd\\csd-340\\module-10\\images\\cave_01.jpg';
+    } else {
+      image1.src = 'https://github.com/devinrandhawa/csd-340/blob/main/moon_01.jpg?raw=true';
+      image2.src = 'https://github.com/devinrandhawa/csd-340/blob/main/cave_01.jpg?raw=true';
+    }
+    
     function changeImage(imageId, newImageSrc) {
       var imageElement = document.getElementById(imageId);
       imageElement.src = newImageSrc;
