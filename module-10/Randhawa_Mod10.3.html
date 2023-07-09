@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="author" content="Devinder Randhawa" />
+    <meta name="description" content="An Exercise in Webpage Development" />
+    <meta name="keywords" content="web, design, development" />
+    <meta name="robots" content="no index" />
+    <link rel="stylesheet" href="Randhawa_Mod2_2.css">
+  <title>CSD 340 Web Development with HTML and CSS</title>
+  <style> 
+    .image {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSD 340 Development with HTML and CSS</h1>
+  <h2>Assignment 10.3: JavaScript - Part 2</h2>
+  
+ <div>
+    <img src="C:/csd/csd-340/module-10/images/moon_01.jpg" class="image" id="image1" onmouseover="changeImage("image1", "C:/csd/csd-340/module-10/images/moon_02.jpg")" onmouseout="changeImage("image1", "C:/csd/csd-340/module-10/images/moon_01.jpg")" onclick="handleImageClick('image1')">
+    <p>Run your mouse over the image to change.</p>
+  </div>
+  
+  <div>
+    <img src="C:/csd/csd-340/module-10/images/cave_01.jpg" class="image" id="image2" onmouseover="changeImage("image2", "C:/csd/csd-340/module-10/images/cave_02.jpg")" onmouseout="changeImage("image2", "C:/csd/csd-340/module-10/images/cave_01.jpg")" onclick="handleImageClick('image2')">
+    <p>Run your mouse over the image to change.</p>
+  </div>
+  
+   <script>
+    function changeImage(imageId, newImageSrc) {
+      var imageElement = document.getElementById(imageId);
+      imageElement.src = newImageSrc;
+    }
+    
+    function handleImageClick(imageId) {
+      var imageElement = document.getElementById(imageId);
+      var currentImageSrc = imageElement.src;
+      var newImageSrc = '';
+
+      if (currentImageSrc.endsWith('01.jpg')) {
+        newImageSrc = currentImageSrc.replace('01.jpg', '02.jpg');
+      } else if (currentImageSrc.endsWith('02.jpg')) {
+        newImageSrc = currentImageSrc.replace('02.jpg', '01.jpg');
+      }
+
+      if (newImageSrc) {
+        changeImage(imageId, newImageSrc);
+      }
+    }
+  </script>
+</body>
+</html>
