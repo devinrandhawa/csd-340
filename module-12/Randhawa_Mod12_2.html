@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Assignment 12.2: JavaScript - Part 4</title>
+<style>
+h1 {
+text-align: center;
+}
+
+.left-div,
+.right-div {
+width: 45%;
+}
+
+.last-div {
+width: 100%;
+margin-top: 60px;
+}
+
+h3 {
+font-weight: 500;
+}
+
+ol {
+font-weight: 300;
+border: 1px solid red;
+border-radius: 15px;
+padding: 10px;
+list-style: decimal inside;
+}
+
+ul {
+font-weight: 300;
+border: 1px solid red;
+border-radius: 15px;
+padding: 10px;
+list-style: upper-roman inside;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+.last-div {
+float: right;
+margin-bottom: 20px;
+}
+div button {
+margin: 5px;
+padding: 10px 20px;
+background-color: #4CAF50;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+div button:hover {
+  background-color: #45a049;
+}
+</style>
+</head>
+<body>
+<h1>CSD 340 Web Development with HTML and CSS</h1>
+<div id="container">
+<h2>Assignment 12.2: JavaScript - Part 4</h2>
+<div style="width: 45%; float: left;">
+
+  <ol id="bookList">
+    <h2>Top 10 Favorite Books</h2>
+    <div>
+      <button onclick="sortTopToBottom()">Top to Bottom</button>
+      <button onclick="sortBottomToTop()">Bottom to Top</button>
+    </div>
+    
+    <hr>
+    <li>The Lord of the Rings</li>
+    <li>The Hitchhiker's Guide to the Galaxy</li>
+    <li>Nineteen Eighty Four</li>
+    <li>The Catcher in the Rye</li>
+    <li>To Kill a Mockingbird</li>
+    <li>The Great Gatsby</li>
+    <li>Pride and Prejudice</li>
+    <li>The Adventures of Sherlock Holmes</li>
+    <li>The Adventures of Huckleberry Finn</li>
+    <li>The Alchemist</li>
+  </ol>
+</div>
+
+    
+<div style="width: 45%; float: right;">
+  <ul>
+    <h2>5 Things I've Learned Since the Course Started</h2>
+    <li>Tags and attributes are the basis of HTML. They work together but perform different functions.</li>
+    <li>There are six levels of headings used in HTML.</li>
+    <li>Unordered lists use bullets, and ordered lists use numbers.</li>
+    <li>The href attribute specifies the page you want to link.</li>
+    <li>The W3C validators site helps with checking and validating html and css code.</li>
+      </ul>
+    </div>
+    <div style="width: 100%; margin-top: 60px;">
+       <a class="back-link" href="../index.html" style="position: fixed; bottom: 10px; right: 10px;">Back to Landing Page</a>
+    </div>
+  </div>
+
+   <script>
+    // JavaScript section with functions for sorting the list
+
+
+function sortBottomToTop() {
+  var olElement = document.getElementById("bookList");
+  var liElements = Array.from(olElement.getElementsByTagName("li"));
+
+  // Sort the list in descending order
+  liElements.sort(function (a, b) {
+    var aValue = a.textContent.trim();
+    var bValue = b.textContent.trim();
+
+    // If both values are numeric, compare them as numbers
+    if (!isNaN(aValue) && !isNaN(bValue)) {
+      return parseInt(bValue) - parseInt(aValue); // Sort numerically in descending order
+    } else {
+      // Otherwise, sort alphabetically in descending order
+      return bValue.localeCompare(aValue);
+    }
+  });
+
+  // Reorder the list items in the DOM
+  liElements.forEach(function (li) {
+    olElement.appendChild(li);
+  });
+}
+
+
+
+
+function sortTopToBottom() {
+  var olElement = document.getElementById("bookList");
+  var liElements = Array.from(olElement.getElementsByTagName("li"));
+
+  // Sort the list in ascending order
+  liElements.sort(function (a, b) {
+    return a.textContent.localeCompare(b.textContent);
+  });
+
+  // Reorder the list items in the DOM
+  liElements.forEach(function (li) {
+    olElement.appendChild(li);
+  });
+}
+
+
+
+    
+  </script>
+</body>
+</html>
